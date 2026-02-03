@@ -1,8 +1,7 @@
 # Horizon-LM
 
-**Horizon-LM: Single-GPU Training of Hundreds-of-Billions Parameter Language Models with Mixed BF16/FP32 Precision**
-
-Train models GPT-oss (bf16/fp32) on a single GPU by storing parameters on CPU and using GPU for computation.
+**Horizon-LM:** 
+**Single-GPU Training of Hundreds-of-Billions Parameter Language Models with Mixed BF16/FP32 Precision**
 
 ## Quick Start
 
