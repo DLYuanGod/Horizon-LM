@@ -1,6 +1,8 @@
-# Horizon-LM
+
 
 **Horizon-LM:** 
+
+
 **Single-GPU Training of Hundreds-of-Billions Parameter Language Models with Mixed BF16/FP32 Precision**
 
 ## Quick Start
