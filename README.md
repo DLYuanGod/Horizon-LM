@@ -27,24 +27,24 @@ python examples/train.py --config examples/configs/qwen_32b.yaml
 
 ## Supported Models
 
-| Model Family | Model Sizes | Status | Template |
-|--------------|-------------|--------|----------|
-| **Qwen2/Qwen2.5** | 0.5B/1.5B/3B/7B/14B/32B/72B | ✅ | `qwen` |
-| Qwen3 | 0.6B/1.7B/4B/8B/14B/32B/80B/235B | 🔄 Pending | `qwen3` |
-| Llama 3/3.1/3.2/3.3 | 1B/3B/8B/70B | 🔄 Pending | `llama3` |
-| Llama 4 | 109B/402B | 🔄 Pending | `llama4` |
-| DeepSeek (LLM/Code/MoE) | 7B/16B/67B/236B | 🔄 Pending | `deepseek` |
-| DeepSeek 3 | 236B/671B | 🔄 Pending | `deepseek3` |
-| DeepSeek R1 | 1.5B/7B/8B/14B/32B/70B/671B | 🔄 Pending | `deepseekr1` |
-| Mistral/Mixtral | 7B/8x7B/8x22B | 🔄 Pending | `mistral` |
-| Phi-4 | 3.8B/14B | 🔄 Pending | `phi4` |
-| GPT-OSS | 20B/120B | 🔄 Pending | `gpt_oss` |
-| GLM-4/GLM-4.5 | 9B/32B/106B/355B | 🔄 Pending | `glm4` |
-| InternLM 2/3 | 7B/8B/20B | 🔄 Pending | `intern2` |
-| Gemma 2/3 | 2B/7B/9B/27B | 🔄 Pending | `gemma2` |
-| Yi | 6B/9B/34B | 🔄 Pending | `yi` |
-| Baichuan 2 | 7B/13B | 🔄 Pending | `baichuan2` |
-| ChatGLM 3/4 | 6B/9B | 🔄 Pending | `chatglm3` |
+| Model Family | Model Sizes | Status |
+|--------------|-------------|--------|
+| **Qwen2/Qwen2.5** | 0.5B/1.5B/3B/7B/14B/32B/72B | ✅ |
+| Qwen3 | 0.6B/1.7B/4B/8B/14B/32B/80B/235B | 🔄 Pending |
+| Llama 3/3.1/3.2/3.3 | 1B/3B/8B/70B | 🔄 Pending |
+| Llama 4 | 109B/402B | 🔄 Pending |
+| DeepSeek (LLM/Code/MoE) | 7B/16B/67B/236B | 🔄 Pending |
+| DeepSeek 3 | 236B/671B | 🔄 Pending |
+| DeepSeek R1 | 1.5B/7B/8B/14B/32B/70B/671B | 🔄 Pending |
+| Mistral/Mixtral | 7B/8x7B/8x22B | 🔄 Pending |
+| Phi-4 | 3.8B/14B | 🔄 Pending |
+| GPT-OSS | 20B/120B | 🔄 Pending |
+| GLM-4/GLM-4.5 | 9B/32B/106B/355B | 🔄 Pending |
+| InternLM 2/3 | 7B/8B/20B | 🔄 Pending |
+| Gemma 2/3 | 2B/7B/9B/27B | 🔄 Pending |
+| Yi | 6B/9B/34B | 🔄 Pending |
+| Baichuan 2 | 7B/13B | 🔄 Pending |
+| ChatGLM 3/4 | 6B/9B | 🔄 Pending |
 
 **Legend:**
 - ✅ Fully supported and tested
@@ -135,19 +135,6 @@ See `examples/configs/README.md` for detailed configuration guide.
 - **PyTorch**: 2.0+
 - **Python**: 3.9+
 
-## How It Works
-
-```
-┌─────────────────────────────────────┐
-│   CPU Memory (FP32 Master Params)  │  ← 128GB for 32B model
-│   + Adam Moments (m, v)            │  ← 128GB for optimizer
-└─────────────────────────────────────┘
-              ↕ Async Transfer
-┌─────────────────────────────────────┐
-│   GPU Memory (BF16 Working Copy)   │  ← 8-180GB
-│   + Activations + Gradients        │
-└─────────────────────────────────────┘
-```
 
 **Key Techniques:**
 - Double buffering for overlapped weight transfer
@@ -201,10 +188,10 @@ If you use Horizon-LM in your research, please cite:
 
 ```bibtex
 @software{horizon-lm,
-  title = {Horizon-LM: Single-GPU Large Model Training},
-  author = {Horizon-LM Team},
-  year = {2024},
-  url = {https://github.com/yourusername/Horizon-LM}
+  title = {Horizon-LM: Single-GPU Training of Hundreds-of-Billions Parameter Language Models with Mixed BF16/FP32 Precision},
+  author = {Zhengqing Yuan, Lichao Sun, Yanfang (Fanny) Ye},
+  year = {2026},
+  url = {https://github.com/DLYuanGod/Horizon-LM}
 }
 ```
 
