@@ -17,8 +17,6 @@ python examples/train.py --config examples/configs/qwen_32b.yaml
 - ✅ **Single GPU Training**: Train 120B+ models on one GPU
 - ✅ **CPU-Backed Parameters**: FP32 master weights on CPU, BF16 working copy on GPU
 - ✅ **YAML Configuration**: Easy model/dataset/hyperparameter configuration
-- ✅ **Flash Attention**: Memory-efficient attention computation
-- ✅ **DeepSpeed CPUAdam**: 5-7x faster optimizer
 - ✅ **Auto CUDA Extension**: Automatically builds optimized CUDA kernels
 
 ## Supported Models
