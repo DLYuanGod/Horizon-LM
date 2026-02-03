@@ -139,7 +139,7 @@ See `examples/configs/README.md` for detailed configuration guide.
 ## Performance
 
 Training Qwen 2.5 32B on single H100:
-- **Memory**:  ~415GB CPU
+- **Memory**:  ~327GB CPU
 - **Throughput**: ~259 TFLOPS
 - **Batch Size**: 96 (seq_len=1024)
 
