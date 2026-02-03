@@ -8,7 +8,7 @@ Train models GPT-oss (bf16/fp32) on a single GPU by storing parameters on CPU an
 
 ```bash
 # Install
-git clone <repository-url>
+git clone https://github.com/DLYuanGod/Horizon-LM.git
 cd Horizon-LM
 pip install -e .
 
