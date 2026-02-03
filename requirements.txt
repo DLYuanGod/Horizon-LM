@@ -1,0 +1,11 @@
+# Core dependencies for Infinity
+torch>=2.0.0
+transformers>=4.30.0
+datasets>=2.0.0
+psutil>=5.9.0
+numpy>=1.20.0
+pyyaml>=6.0  # For YAML configuration files
+
+# Optional dependencies (install separately if needed)
+# flash-attn>=2.0.0  # For Flash Attention support
+# deepspeed>=0.10.0  # For DeepSpeed CPUAdam optimizer

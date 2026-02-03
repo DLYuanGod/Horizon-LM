@@ -1,0 +1,41 @@
+# Infinity Training Configuration
+# This file controls all training parameters
+
+# Model Configuration
+model:
+  name: "Qwen/Qwen2.5-32B-Instruct"  # HuggingFace model identifier
+  dtype: "bfloat16"                   # Data type: bfloat16, float16, float32
+  device: 0                           # CUDA device index
+
+# Dataset Configuration
+dataset:
+  path: "/work/nvme/bemy/zyuan2/code/Infinity/dataset/Math/train"
+  max_seq_len: 1024                   # Maximum sequence length
+  num_workers: 2                      # DataLoader workers
+
+# Training Hyperparameters
+training:
+  batch_size: 96                      # Batch size per step
+  gradient_accumulation_steps: 1      # Gradient accumulation steps
+  num_steps: 100                      # Total training steps
+  learning_rate: 1.0e-5               # Learning rate
+  weight_decay: 0.01                  # Weight decay
+  max_grad_norm: 1.0                  # Gradient clipping norm
+  seed: 42                            # Random seed
+
+# Optimizer Configuration
+optimizer:
+  type: "deepspeed_adam"              # Options: deepspeed_adam, adamw
+  beta1: 0.9                          # Adam beta1
+  beta2: 0.999                        # Adam beta2
+  eps: 1.0e-8                         # Adam epsilon
+
+# Memory Management
+memory:
+  checkpoint_interval: 4              # Layers between checkpoints
+  num_grad_slabs: 12                  # Gradient slab pool size (>= 2 * checkpoint_interval)
+
+# Logging
+logging:
+  log_interval: 1                     # Steps between logging
+  enable_timing: true                 # Enable CUDA timing (adds sync overhead)
