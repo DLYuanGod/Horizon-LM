@@ -1,3 +1,5 @@
+# Horizon-LM: A RAM-Centric Architecture for LLM Training
+</a> <a href='https://arxiv.org/pdf/2602.04816'><img src='https://img.shields.io/badge/Paper-Arxiv-red'></a>
 
 
 ## Quick Start
@@ -181,11 +183,14 @@ pip install deepspeed
 If you use Horizon-LM in your research, please cite:
 
 ```bibtex
-@software{horizon-lm,
-  title = {Horizon-LM: Single-GPU Training of Hundreds-of-Billions Parameter Language Models with Mixed BF16/FP32 Precision},
-  author = {Zhengqing Yuan, Lichao Sun, Yanfang (Fanny) Ye},
-  year = {2026},
-  url = {https://github.com/DLYuanGod/Horizon-LM}
+@misc{yuan2026horizonlmramcentricarchitecturellm,
+      title={Horizon-LM: A RAM-Centric Architecture for LLM Training}, 
+      author={Zhengqing Yuan and Lichao Sun and Yanfang Ye},
+      year={2026},
+      eprint={2602.04816},
+      archivePrefix={arXiv},
+      primaryClass={cs.OS},
+      url={https://arxiv.org/abs/2602.04816}, 
 }
 ```
 
